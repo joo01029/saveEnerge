@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body th:with="all=0, real=0">
+
+    <div id="header">
+
+        <span th:if="${type}=='ALL'">All</span>
+        <a th:unless="${type}=='ALL'" href="/">All</a>
+
+        <span th:if="${type}=='WATER'">WATER</span>
+        <a th:unless="${type}=='WATER'" href="/WATER">WATER</a>
+
+        <span th:if="${type}=='BRIGHT'">BRIGHT</span>
+        <a th:unless="${type}=='BRIGHT'" href="/BRIGHT">BRIGHT</a>
+
+        <span th:if="${type}=='TEMPERATURE'">TEMPERATURE</span>
+        <a th:unless="${type}=='TEMPERATURE'" href="/TEMPERATURE">TEMPERATURE</a>
+    </div>
+    <div class="header">
+        <span >총합 시간(초)</span>
+        <span >실제 시간(초)</span>
+        <span>날짜</span>
+        <span>타입</span>
+    </div>
+    <th:block th:each="task: ${tasks}">
+        <div class="body">
+            <span th:text="${task.totalTaskTime}"></span>
+            <span th:text="${task.realTaskTime}"></span>
+            <span th:text="${task.date}"></span>
+            <span th:text="${task.type}"></span>
+        </div>
+    </th:block>
+    <div class="footer">
+        <span>총합(실행 시간(초))</span>
+        <span th:text="${#aggregates.sum(tasks.![totalTaskTime])}"></span>
+        <span>총합(실제 실행 시간(초))</span>
+        <span th:text="${#aggregates.sum(tasks.![realTaskTime])}"></span>
+    </div>
+</body>
+</html>

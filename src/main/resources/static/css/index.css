@@ -1,0 +1,40 @@
+.body{
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.header{
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 20px;
+}
+span{
+    width: 20%;
+}
+
+#header{
+    color: red;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 20px;
+}
+a{
+    color: black;
+    text-decoration: none;
+    width: 20%;
+}
+.footer{
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 20px;
+}
